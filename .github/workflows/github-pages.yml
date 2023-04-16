@@ -18,6 +18,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gems-
       - uses: helaili/jekyll-action@v2
+        with:
+          token: ${{ secrets.MY_TOKEN }}
         env:
-          JEKYLL_PAT: ${{ secrets.MY_TOKEN }}
           JEKYLL_ENV: production
