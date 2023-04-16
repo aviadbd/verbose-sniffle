@@ -4,7 +4,9 @@ author: traveler
 ---
 
 A Day in Fujikawaguchiko: Exploring Nature and History
+
 As I woke up in my cozy room in Fujikawaguchiko, I realized that it was a freezing morning. The temperature outside and inside was -6 degrees Celsius, which made it almost impossible to get out of bed. However, I learned a valuable lesson: turn on the air conditioner on freezing nights all night.
+
 After some coffee and a quick breakfast, my friend and I set off to explore the area. We planned to ask some questions about the journey to Kyoto, but we almost missed the bus to the hiking area. We barely made it on time, quickly grabbed some food, and headed towards Mount Kamenshi.
 Unfortunately, the route was closed, and we soon discovered that there was no other way to continue without passing through a "no entrance" area. We decided to give up and walked towards the second mountain, Junigatka. On the way, we had a pleasant walk around Lake Saiko, which offered stunning views of the mountains and the hidden Mount Fuji.
 When we finally reached the second mountain, we realized that the route was too difficult for us. A quick search on the internet revealed that it was a non-circular trail with rope bridges that took about four hours and did not seem particularly safe. Instead, we headed towards a restored resort town from ancient Japan, where we had a delicious lunch of noodles with vegetarian tempura and chicken.
