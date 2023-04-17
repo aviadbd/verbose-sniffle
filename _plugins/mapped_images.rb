@@ -6,7 +6,7 @@ module Jekyll
     def map_marker(input)
       <<~END
       <script>
-      /* var marker = */ L.marker([#{input.latitude}, #{input.longitude}]).addTo(map);
+      /* var marker = */ L.marker([#{input['latitude']}, #{input['longitude']}]).addTo(map);
       </script>
       END
     end
