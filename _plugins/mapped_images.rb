@@ -16,7 +16,7 @@ module Jekyll
       
       
       if options[:images].start_with?("page.") then
-        images = context.reigsters[:page][options[:images][5..]]
+        images = context.registers[:page][options[:images][5..]]
       else
         images = context[options[:images]]
       end
