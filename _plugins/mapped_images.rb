@@ -14,7 +14,7 @@ module Jekyll
     def map_setview(input)
       <<~END
       <script>
-        map.setView([lat, lng], 13);
+        map.setView([#{input['latitude']}, #{input['longitude']}, 13);
       </script>
       END
     end
