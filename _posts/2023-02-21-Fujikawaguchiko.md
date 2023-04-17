@@ -6,7 +6,7 @@ location:
   latitude: -5
 ---
 
-{% render_map name='map1' %}
+{% render_map name='map' %}
 
 {{ page.location | map_setview }}
 {{ page.location | map_marker }}
