@@ -3,8 +3,8 @@ layout: post
 author: traveler
 leaflet_data: 
   markers:
-    - lat: 35.477724
-      lng: 138.657779
+    - latitude: 35.477724
+      longitude: 138.657779
 ---
 
 {% include leaflet_map.html %}
