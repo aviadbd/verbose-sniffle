@@ -1,4 +1,4 @@
 {% assign gps = include.image_path | exif: 'gps' %}
 
-<img src="{{ include.image_path }}" />
+<img src="{{ include.image_path }}" class="header-image" />
 {% include leaflet_map.html markers=[gps] %}
