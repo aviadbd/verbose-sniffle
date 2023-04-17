@@ -5,7 +5,7 @@ author: traveler
 
 {% render_map name='map' %}
 
-{{ "assets/IMG_4701.jpeg" | exif: 'gps' }}
+{{ "assets/IMG_4701.jpeg" | exif }}
 
 {% assign location = "assets/IMG_4701.jpeg" | exif: 'gps' %}
 
