@@ -16,7 +16,7 @@ module Jekyll
       
       
       if options[:images].start_with?("page.") then
-        "is_page.#{options[:images].slice("page.")}"
+        "is_page.#{options[:images][5..])}"
       else
         "not_page.#{options[:images]}"
       end
