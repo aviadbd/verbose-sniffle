@@ -7,15 +7,7 @@ images:
 
 {{ page.images }}
 
-{{ 
-  page.images.map { |image| image | relative_url } 
-}}
-
-{% assign images = page.images.map {|image| image | relative_url} %}
-
-{{ images }}
-
-{% include mapped_image.html images=images %}
+{% mapped_images images=page.images %}
 
 A Day in Fujikawaguchiko: Exploring Nature and History
 
