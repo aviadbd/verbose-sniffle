@@ -7,7 +7,7 @@ images:
 
 {{ page.images }}
 
-{% mapped_images images=page.images %}
+{% mapped_images images='{{page.images}}' %}
 
 A Day in Fujikawaguchiko: Exploring Nature and History
 
