@@ -39,6 +39,8 @@ module Jekyll
       }).addTo(map);
       </script>
       END
+    end
+  end
 end
 
 Liquid::Template.register_tag('render_map', Jekyll::RenderMapTag)
