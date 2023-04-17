@@ -1,6 +1,12 @@
 ---
 layout: post
 author: traveler
+leaflet_data: 
+  markers:
+    - x: 10
+      y: 10
+    - x: 12
+      y: 12
 ---
 
 {% include leaflet_map.html %}
