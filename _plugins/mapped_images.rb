@@ -5,7 +5,7 @@ require 'exifr/jpeg'
 
 module Jekyll
   class RenderTimeTag < Liquid::Tag
-    include Liquid::StandardFilters
+    include Jekyll::Filters::URLFilters    
     
     def initialize(tag_name, text, tokens)
       super
