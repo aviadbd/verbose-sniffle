@@ -3,6 +3,8 @@ layout: post
 author: traveler
 ---
 
+{% leaflet_map %}
+
 A Day in Fujikawaguchiko: Exploring Nature and History
 
 As I woke up in my cozy room in Fujikawaguchiko, I realized that it was a freezing morning. The temperature outside and inside was -6 degrees Celsius, which made it almost impossible to get out of bed. However, I learned a valuable lesson: turn on the air conditioner on freezing nights all night.
