@@ -1,7 +1,9 @@
 {% assign images = [include.image_path] %}
 
 {% assign markers = [] %}
-{% for image in images do markers.push( image | exif: 'gps' ) end %}
+{% for image in images %}
+  {% markers.push( image | exif: 'gps' ) %}
+{% endfor %}
 
 {{ markers }}
 <img src="{{ images[0] }}" class="header-image" />
