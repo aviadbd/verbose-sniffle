@@ -4,11 +4,10 @@ module Jekyll
     def initialize(tag_name, text, tokens)
       super
       @text = text
-      @tokens = tokens
     end
 
     def render(context)
-      "#{@text} -- #{@tokens}"
+      "#{@text}"
       
         # see https://leafletjs.com/examples/quick-start/ 
 #       <<~END
