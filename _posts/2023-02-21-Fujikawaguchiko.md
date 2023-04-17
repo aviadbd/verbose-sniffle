@@ -5,7 +5,8 @@ images:
   - "/assets/IMG_4701.jpeg"
 ---
 
-{% include mapped_image.html image_path=page.images.map {|image| image | relative_url} %}
+{% assign images = page.images.map {|image| image | relative_url} %}
+{% include mapped_image.html images=images %}
 
 A Day in Fujikawaguchiko: Exploring Nature and History
 
