@@ -6,10 +6,17 @@ module Jekyll
     def map_marker(input)
       <<~END
       <script>
-      /* var marker = */ L.marker([#{input['latitude']}, #{input['longitude']}]).addTo(map);
+        /* var marker = */ L.marker([#{input['latitude']}, #{input['longitude']}]).addTo(map);
       </script>
       END
     end
+    
+    def map_setview(input)
+      <<~END
+      <script>
+        map.setView([lat, lng], 13);
+      </script>
+      END
   end
   
   class RenderMapTag < Liquid::Tag
@@ -22,24 +29,16 @@ module Jekyll
       argv = Shellwords.split @text
       options = KeyValueParser.new.parse(argv)
       
-      name = options[:name]
-      latitude = options[:latitude]
-      longitude = options[:longitude]
-      
       <<~END
-      <div id='#{name}'></div>
+      <div id='#{options[:name]}'></div>
       
       <script>
-      var name = '#{name}'
-      var lat = #{latitude}
-      var lng = #{longitude}
-  
-      var map = L.map(name).setView([lat, lng], 13);
-  
-      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19,
-        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-      }).addTo(map);
+        var map = L.map(#{options[:name]})
+
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          maxZoom: 19,
+          attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
       </script>
       END
     end
