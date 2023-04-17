@@ -6,6 +6,8 @@ location:
   - latitude: -5
 ---
 
+{% render_map name='map1' longitude='{{page.location.longitude}}' latitude='{{page.location.latitude}}' %}
+
 {{ page.location | render_map map1 }}
 {{ page.location | map_marker map1 }}
 
