@@ -8,7 +8,7 @@ location:
 
 {% render_map name='map1' longitude='{{page.location.longitude}}' latitude='{{page.location.latitude}}' %}
 
-{{ page.location | map_marker map1 }}
+{{ page.location | map_marker }}
 
 A Day in Fujikawaguchiko: Exploring Nature and History
 
