@@ -2,8 +2,8 @@
 layout: post
 author: traveler
 location:
-  - longitude: 50.0
-  - latitude: -5
+  longitude: 50.0
+  latitude: -5
 ---
 
 {% render_map name='map1' longitude='{{page.location.longitude}}' latitude='{{page.location.latitude}}' %}
