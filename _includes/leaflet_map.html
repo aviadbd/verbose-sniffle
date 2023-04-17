@@ -10,5 +10,5 @@
   
   {% for marker in leaflet_data.markers do %}
     /* var marker = */ L.marker([{{ marker.x }}, {{ marker.y }}]).addTo(map);
-  {% end %}
+  {% endfor %}
 </script>
