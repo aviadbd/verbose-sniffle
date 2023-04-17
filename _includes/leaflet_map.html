@@ -2,7 +2,7 @@
 
 <script>
   var lat = {{ include.markers[0].latitude | default: 0 }}
-  var lng = {{ include..markers[0].longitude | default: 0 }}
+  var lng = {{ include.markers[0].longitude | default: 0 }}
   
   var map = L.map('map').setView([lat, lng], 13);
   
