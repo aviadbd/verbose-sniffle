@@ -1,3 +1,7 @@
+require 'key_value_parser'
+require 'shellwords'
+
+
 module Jekyll
   class RenderTimeTag < Liquid::Tag
 
@@ -7,8 +11,11 @@ module Jekyll
     end
 
     def render(context)
-      "#{@text} -- #{context['images']}"
+      argv = Shellwords.split @text
+      options = KeyValueParser.new.parse(argv)
       
+      "#{argv} -- #{options} -- #{options[:images]}"
+
       
         # see https://leafletjs.com/examples/quick-start/ 
 #       <<~END
