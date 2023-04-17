@@ -27,4 +27,4 @@ module Jekyll
   end
 end
 
-Liquid::Template.register_tag('mapped_images', Jekyll::RenderTimeTag
+Liquid::Template.register_tag('mapped_images', Jekyll::RenderTimeTag)
