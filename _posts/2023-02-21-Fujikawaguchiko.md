@@ -3,7 +3,7 @@ layout: post
 author: traveler
 ---
 
-{% leaflet_map %}
+{% include leaflet_map.html %}
 
 A Day in Fujikawaguchiko: Exploring Nature and History
 
