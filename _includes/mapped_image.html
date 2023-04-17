@@ -1,4 +1,8 @@
-{% assign gps = include.image_path | exif: 'gps' %}
-{{ [gps] }}
-<img src="{{ include.image_path }}" class="header-image" />
-{% include leaflet_map.html markers=[gps] %}
+{% assign images = [include.image_path] %}
+
+{% assign markers = [] %}
+{% for image in images do markers.push( image | exif: 'gps' ) end %}
+
+{{ markers }}
+<img src="{{ images[0] }}" class="header-image" />
+{% include leaflet_map.html markers=markers %}
