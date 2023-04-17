@@ -5,10 +5,8 @@ author: traveler
 
 {% render_map name='map' %}
 
-{{ "/assets/IMG_4701.jpeg" | relative_url }}
-{{ "/assets/IMG_4701.jpeg" | relative_url | exif: 'gps' }}
-{{ "/assets/IMG_4701.jpeg" }}
-{{ "/assets/IMG_4701.jpeg" | exif: 'gps' }}
+{{ "assets/IMG_4701.jpeg" | relative_url }}
+{{ "assets/IMG_4701.jpeg" | relative_url | exif: 'gps' }}
 
 {% assign location = "/assets/IMG_4701.jpeg" | relative_url | exif: 'gps' %}
 
