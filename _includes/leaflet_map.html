@@ -1,5 +1,13 @@
 <div id="map"></div>
 
+<hr/>
+
+Include: <br/>
+
+{{ include }}
+
+<hr/>
+
 <script>
   var lat = {{ include.markers[0].latitude | default: 0 }}
   var lng = {{ include.markers[0].longitude | default: 0 }}
