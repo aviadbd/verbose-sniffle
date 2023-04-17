@@ -1,14 +1,18 @@
 ---
 layout: post
 author: traveler
+location:
+  longitude: 32
+  latitude: 35
 ---
 
 {% render_map name='map' %}
 
-{{ "assets/IMG_7655.jpeg" | exif: 'gps?' }}
 
-{% assign location = "assets/IMG_7655.jpeg" | exif: 'gps' %}
+{% comment %} assign location = "assets/IMG_7655.jpeg" | exif: 'gps' %} {% endcomment %}
 
+{% assign location = page.location %}
+ 
 {{ location | map_setview }}
 {{ location | map_marker }}
 
