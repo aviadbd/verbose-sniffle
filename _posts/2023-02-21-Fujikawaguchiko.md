@@ -5,6 +5,9 @@ images:
   - "/assets/IMG_4701.jpeg"
 ---
 
+{{ page.images }}
+{{ page.images.map { |image| image | relative_url } }}
+
 {% assign images = page.images.map {|image| image | relative_url} %}
 
 {{ images }}
