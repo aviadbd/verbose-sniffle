@@ -14,9 +14,13 @@ module Jekyll
       argv = Shellwords.split @text
       options = KeyValueParser.new.parse(argv)
       
-      "#{argv} -- #{options} -- #{options[:images]}"
-
       
+      if options[:images].start_with?("page.") then
+        "is_page.#{options[:images].slice("page."}"
+      else
+        "not_page.#{options[:images]}"
+      end
+        
         # see https://leafletjs.com/examples/quick-start/ 
 #       <<~END
 #       var lat = #{@images[0].latitude}
