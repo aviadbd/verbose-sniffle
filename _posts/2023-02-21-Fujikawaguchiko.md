@@ -6,7 +6,10 @@ images:
 ---
 
 {{ page.images }}
-{{ page.images.map { |image| image | relative_url } }}
+
+{{ 
+  page.images.map { |image| image | relative_url } 
+}}
 
 {% assign images = page.images.map {|image| image | relative_url} %}
 
