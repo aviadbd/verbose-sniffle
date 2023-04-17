@@ -7,7 +7,8 @@ module Jekyll
     end
 
     def render(context)
-      "#{@text}"
+      "#{@text} -- #{context[:page]}"
+      
       
         # see https://leafletjs.com/examples/quick-start/ 
 #       <<~END
