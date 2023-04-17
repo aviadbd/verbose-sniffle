@@ -7,7 +7,11 @@ images:
 
 {{ page.images }}
 
-{% mapped_images images='{{page.images}}' %}
+{% assign f = page.images %}
+
+{{ f }}
+
+{% mapped_images images=page.images %}
 
 A Day in Fujikawaguchiko: Exploring Nature and History
 
