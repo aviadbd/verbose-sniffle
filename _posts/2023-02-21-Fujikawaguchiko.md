@@ -7,9 +7,9 @@ leaflet_data:
       longitude: 138.657779
 ---
 
-{{ leaflet_data.markers }}
+{{ page.leaflet_data.markers }}
 
-{% include leaflet_map.html markers=leaflet_data.markers %}
+{% include leaflet_map.html markers=page.leaflet_data.markers %}
 
 A Day in Fujikawaguchiko: Exploring Nature and History
 
