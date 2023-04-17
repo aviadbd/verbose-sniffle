@@ -1,13 +1,13 @@
 ---
 layout: post
 author: traveler
-images:
-  - "/assets/IMG_4701.jpeg"
+location:
+  - longitude: 50.0
+  - latitude: -5
 ---
 
-{{ page.images }}
-
-{% mapped_images images=page.images %}
+{% page.location | render_map map1 %}
+{% page.location | map_marker map1 %}
 
 A Day in Fujikawaguchiko: Exploring Nature and History
 
