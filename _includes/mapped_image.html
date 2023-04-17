@@ -1,10 +1,6 @@
 {{ include }}
 
-{% assign images = [include.image_path] %}
-
-{{ images }}
-
-{% assign markers = images.map { |image| image | exif: 'gps' } %}
+{% assign markers = include.images.map { |image| image | exif: 'gps' } %}
 
 {{ markers }}
 
