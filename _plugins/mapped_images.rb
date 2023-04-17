@@ -5,7 +5,8 @@ require 'exifr/jpeg'
 
 module Jekyll
   class RenderTimeTag < Liquid::Tag
-
+    include Liquid::StandardFilters
+    
     def initialize(tag_name, text, tokens)
       super
       @text = text
@@ -22,7 +23,7 @@ module Jekyll
         images = context[options[:images]]
       end
         
-      markers = images.map { |image| EXIFR::JPEG.new(image).gps }
+      markers = images.map { |image| EXIFR::JPEG.new(relative_url(image)).gps }
 
         # see https://leafletjs.com/examples/quick-start/ 
       <<~END
