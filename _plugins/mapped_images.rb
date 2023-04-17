@@ -24,7 +24,6 @@ module Jekyll
       }).addTo(map);
       </script>
       END
-      END
     end
   end
 end
