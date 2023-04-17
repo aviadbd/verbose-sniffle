@@ -16,7 +16,7 @@
   {% endcomment %}
   
   {% for marker in page.leaflet_data.markers do %}
-    /* var marker = */ L.marker([{{ marker.x }}, {{ marker.y }}]).addTo(map);
+    /* var marker = */ L.marker([{{ marker.lat }}, {{ marker.lng }}]).addTo(map);
   {% endfor %}
 
 </script>
