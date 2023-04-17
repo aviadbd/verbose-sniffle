@@ -25,7 +25,7 @@ module Jekyll
         
       @context = context # for the relative_url method
         
-      markers = images.map { |image| EXIFR::JPEG.new(relative_url(image)).gps }
+      markers = images.map { |image| EXIFR::JPEG.new(absolute_url(image)).gps }
 
         # see https://leafletjs.com/examples/quick-start/ 
       <<~END
