@@ -34,7 +34,7 @@ module Jekyll
       <div id='#{options[:name]}'></div>
       
       <script>
-        var map = L.map(#{options[:name]})
+        var map = L.map('#{options[:name]}')
 
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
           maxZoom: 19,
