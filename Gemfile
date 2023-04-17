@@ -6,5 +6,6 @@ gem 'webrick', '~> 1.7'
 group :jekyll_plugins do
   gem 'key-value-parser'
   gem 'shellwords'
+  gem 'exifr', '~> 1.3', '>= 1.3.10'
 end
 
