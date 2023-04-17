@@ -1,14 +1,11 @@
 ---
 layout: post
 author: traveler
-leaflet_data: 
-  markers:
-    - latitude: 35.477724
-      longitude: 138.657779
+images:
+  - "/assets/IMG_4701.jpeg"
 ---
 
-{% capture image_path %}{{ "/assets/IMG_4701.jpeg" | relative_url }}{% endcapture %}
-{% include mapped_image.html image_path=image_path %}
+{% include mapped_image.html image_path=page.images.map {|image| image | relative_url} %}
 
 A Day in Fujikawaguchiko: Exploring Nature and History
 
