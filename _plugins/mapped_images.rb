@@ -1,3 +1,6 @@
+require 'key_value_parser'
+require 'shellwords'
+
 module Jekyll
   module MapsFilter
     def map_marker(input)
