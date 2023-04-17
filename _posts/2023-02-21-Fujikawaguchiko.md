@@ -2,14 +2,10 @@
 layout: post
 author: traveler
 images:
-  - "/assets/IMG_4701.jpeg"
+  - "/assets/IMG_4701.jpeg" | relative_url
 ---
 
 {{ page.images }}
-
-{% assign f = page.images %}
-
-{{ f }}
 
 {% mapped_images images=page.images %}
 
