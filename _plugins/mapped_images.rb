@@ -17,6 +17,7 @@ module Jekyll
         map.setView([lat, lng], 13);
       </script>
       END
+    end
   end
   
   class RenderMapTag < Liquid::Tag
