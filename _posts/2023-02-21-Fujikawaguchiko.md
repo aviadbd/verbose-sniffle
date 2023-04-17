@@ -2,7 +2,7 @@
 layout: post
 author: traveler
 images:
-  - "/assets/IMG_4701.jpeg" | relative_url
+  - "/assets/IMG_4701.jpeg"
 ---
 
 {{ page.images }}
