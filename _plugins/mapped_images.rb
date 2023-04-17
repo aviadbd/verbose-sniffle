@@ -1,5 +1,6 @@
 require 'key_value_parser'
 require 'shellwords'
+require 'exifr/jpeg'
 
 
 module Jekyll
@@ -21,20 +22,20 @@ module Jekyll
         images = context[options[:images]]
       end
         
-      "#{images}"
-        
+      markers = images.map { |image| EXIFR::JPEG.new(image).gps }
+
         # see https://leafletjs.com/examples/quick-start/ 
-#       <<~END
-#       var lat = #{@images[0].latitude}
-#       var lng = #{@images[0].longitude}
+      <<~END
+      var lat = #{markers[0].latitude}
+      var lng = #{markers[0].longitude}
   
-#       var map = L.map('map').setView([lat, lng], 13);
+      var map = L.map('map').setView([lat, lng], 13);
   
-#       L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-#         maxZoom: 19,
-#         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-#       }).addTo(map);
-#       END
+      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+      }).addTo(map);
+      END
 
 #       {% for marker in include.markers do %}
 #         /* var marker = */ L.marker([{{ marker.latitude }}, {{ marker.longitude }}]).addTo(map);
