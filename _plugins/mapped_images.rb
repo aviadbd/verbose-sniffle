@@ -16,10 +16,12 @@ module Jekyll
       
       
       if options[:images].start_with?("page.") then
-        "is_page.#{options[:images][5..]}"
+        images = context.reigsters[:page][options[:images][5..]]
       else
-        "not_page.#{options[:images]}"
+        images = context[options[:images]]
       end
+        
+      "#{images}"
         
         # see https://leafletjs.com/examples/quick-start/ 
 #       <<~END
