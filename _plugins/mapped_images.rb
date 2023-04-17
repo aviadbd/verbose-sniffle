@@ -7,7 +7,7 @@ module Jekyll
     end
 
     def render(context)
-      "#{@text} -- #{context}"
+      "#{@text} -- #{context['images']}"
       
       
         # see https://leafletjs.com/examples/quick-start/ 
