@@ -6,6 +6,6 @@ gem 'webrick', '~> 1.7'
 group :jekyll_plugins do
   gem 'key-value-parser'
   gem 'shellwords'
-  gem 'exif'
+  gem 'jekyll-exif-data'
 end
 
