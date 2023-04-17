@@ -1,8 +1,8 @@
 <div id="map"></div>
 
 <script>
-  var lat = {{ include.markers[0].lat }}
-  var lng = {{ include..markers[0].lng }}
+  var lat = {{ include.markers[0].latitude }}
+  var lng = {{ include..markers[0].longitude }}
   
   var map = L.map('map').setView([lat, lng], 13);
   
@@ -16,7 +16,7 @@
   {% endcomment %}
   
   {% for marker in include.markers do %}
-    /* var marker = */ L.marker([{{ marker.lat }}, {{ marker.lng }}]).addTo(map);
+    /* var marker = */ L.marker([{{ marker.latitude }}, {{ marker.longitude }}]).addTo(map);
   {% endfor %}
 
 </script>
