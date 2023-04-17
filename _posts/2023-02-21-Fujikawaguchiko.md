@@ -1,15 +1,14 @@
 ---
 layout: post
 author: traveler
-location:
-  longitude: 50.0
-  latitude: -5
 ---
 
 {% render_map name='map' %}
 
-{{ page.location | map_setview }}
-{{ page.location | map_marker }}
+{% assign location = "/assets/IMG_4701.jpeg" | relative_url | exif: 'gps' %}
+
+{{ location | map_setview }}
+{{ location | map_marker }}
 
 A Day in Fujikawaguchiko: Exploring Nature and History
 
