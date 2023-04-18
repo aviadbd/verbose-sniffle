@@ -37,7 +37,8 @@ module Jekyll
     end
 
     def create_map(markers)
-      "<div id='map'></div>
+      <<~HTML
+      <div id='map'></div>
       <script>
         var map = L.map('map').setView([0, 0], 1);
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -46,7 +47,8 @@ module Jekyll
         }).addTo(map);        
         
         #{markers}
-      </script>"
+      </script>
+      HTML
     end
   end
 end
