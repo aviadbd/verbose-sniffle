@@ -6,7 +6,7 @@ images:
   - "assets/IMG_4701.jpeg"
 ---
 
-{% exif_map images %}
+{% exif_map images=images %}
 
 A Day in Fujikawaguchiko: Exploring Nature and History
 
