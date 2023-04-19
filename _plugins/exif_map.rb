@@ -19,7 +19,7 @@ module Jekyll
 
       locations = get_gps_locations(image_list)
       
-      locations
+      "#{locations} -- #{locations&.empty?} -- #{locations&[0]}"
       
 #      create_map(locations)
     end
