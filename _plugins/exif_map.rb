@@ -51,6 +51,8 @@ module Jekyll
 
     def create_markers(locations)
       markers = ""
+      return markers unless not locations&.empty?
+      
       locations.each do |location|
         lat = location[0]
         lng = location[1]
