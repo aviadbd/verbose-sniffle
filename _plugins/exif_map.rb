@@ -48,7 +48,7 @@ module Jekyll
     end
 
     def create_map(locations)
-      "No Locations" if locations.empty?
+      "No Locations" unless locations and not locations.empty?
 
       markers = create_markers(locations)
 
