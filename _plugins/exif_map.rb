@@ -19,7 +19,7 @@ module Jekyll
       return "No Images Selected" unless not image_list&.empty?
 
       locations = get_gps_locations(image_list)
-      locations = center unless not locations&.empty?
+      locations = [center] unless not locations&.empty?
       
       create_map(locations)
     end
