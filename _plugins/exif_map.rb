@@ -18,7 +18,10 @@ module Jekyll
       "No Images Selected" unless image_list and not image_list.empty?
 
       locations = get_gps_locations(image_list)
-      create_map(locations)
+      
+      locations
+      
+#      create_map(locations)
     end
 
     def get_gps_locations(image_list)
