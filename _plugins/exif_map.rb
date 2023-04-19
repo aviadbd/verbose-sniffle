@@ -10,7 +10,7 @@ module Jekyll
     def render(context)
       image_list = context.registers[:page][@images_param]
       
-      "#{@images_param} -- #{image_list} -- #{context.registers[:page]}"
+      "#{@images_param} -- #{image_list} -- #{context.registers[:page]['images']}"
       
 #       "No Images Selected" unless image_list and not image_list.empty?
 
