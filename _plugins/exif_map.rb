@@ -10,19 +10,19 @@ module Jekyll
     def render(context)
       image_list = context.registers[:page][@images_param]
       
-      if image_list then
-        locations = get_gps_locations(image_list)
-        markers = create_markers(locations)
-        create_map(markers)
-      else 
-        "No Images Selected"
-      end
+      "#{@images_param} -- #{image_list}"
+      
+      "No Images Selected" unless images_list and not images_list.empty?
+
+      locations = get_gps_locations(image_list)
+      create_map(locations)
     end
 
     def get_gps_locations(image_list)
       locations = []
       image_list.each do |image|
-        # TODO: check if the image exists first
+        next unless File.file?(image)
+
         exif = EXIFR::JPEG.new(image) 
         # surely there's a more ruby way to write this
         if exif.gps
@@ -44,10 +44,12 @@ module Jekyll
       markers
     end
 
-    def create_map(markers)
-      # assert markers.size > 0
+    def create_map(locations)
+      "No Locations" if locations.empty?
 
-      center = "[#{markers[0][0]}, #{markers[0][1]}]"
+      markers = create_markers(locations)
+
+      center = "[#{locations[0][0]}, #{locations[0][1]}]"
       
       <<~HTML
       <div id='map'></div>
