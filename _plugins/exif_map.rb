@@ -4,11 +4,13 @@ module Jekyll
   class ExifMapTag < Liquid::Tag
     def initialize(tag_name, text, tokens)
       super
-      @image_list = text.split(',').map(&:strip)
+      @images_param = text
     end
 
     def render(context)
-      locations = get_gps_locations(@image_list)
+      image_list = context.registers[:page][@images_param]
+      
+      locations = get_gps_locations(image_list)
       markers = create_markers(locations)
       create_map(markers)
     end
@@ -16,7 +18,9 @@ module Jekyll
     def get_gps_locations(image_list)
       locations = []
       image_list.each do |image|
-        exif = EXIFR::JPEG.new(image)
+        # TODO: check if the image exists first
+        exif = EXIFR::JPEG.new(image) 
+        # surely there's a more ruby way to write this
         if exif.gps
           lat = exif.gps.latitude
           lng = exif.gps.longitude
@@ -37,10 +41,14 @@ module Jekyll
     end
 
     def create_map(markers)
+      # assert markers.size > 0
+
+      center = "[#{markers[0][0]}, #{markers[0][1]}]"
+      
       <<~HTML
       <div id='map'></div>
       <script>
-        var map = L.map('map').setView([0, 0], 1);
+        var map = L.map('map').setView(#{center}, 1);
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
           maxZoom: 19,
           attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
