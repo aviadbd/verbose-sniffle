@@ -4,9 +4,12 @@ author: traveler
 images: 
   - "assets/IMG_7655.jpeg"
   - "assets/IMG_4701.jpeg"
+center:
+  - 50.1
+  - -0.5 
 ---
 
-{% exif_map images=images %}
+{% exif_map images=images center=center %}
 
 A Day in Fujikawaguchiko: Exploring Nature and History
 
