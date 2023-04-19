@@ -10,18 +10,29 @@ module Jekyll
     end
 
     def render(context)
-      argv = Shellwords.split @params
-      options = KeyValueParser.new.parse(argv)
+      options = parse_params(context)
       
       image_list = context.registers[:page][options[:images]]
+      center = context.registers[:page][options[:center]]
+      
       
       return "No Images Selected" unless not image_list&.empty?
 
       locations = get_gps_locations(image_list)
+      locations = center unless not locations&.empty?
       
       create_map(locations)
     end
 
+    private
+    
+    def parse_params(context)
+      argv = Shellwords.split @params
+      options = KeyValueParser.new.parse(argv)
+      
+      options
+    end
+    
     def get_gps_locations(image_list)
       locations = []
       image_list.each do |image|
