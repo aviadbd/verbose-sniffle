@@ -15,13 +15,11 @@ module Jekyll
       
       image_list = context.registers[:page][options[:images]]
       
-      "No Images Selected" unless image_list and not image_list.empty?
+      return "No Images Selected" unless not image_list&.empty?
 
       locations = get_gps_locations(image_list)
       
-      "#{locations} -- #{locations&.empty?} -- #{locations&[0]}"
-      
-#      create_map(locations)
+      create_map(locations)
     end
 
     def get_gps_locations(image_list)
@@ -51,7 +49,7 @@ module Jekyll
     end
 
     def create_map(locations)
-      "No Locations" unless locations and not locations.empty?
+      return "No Locations" unless not locations&.empty?
 
       markers = create_markers(locations)
 
