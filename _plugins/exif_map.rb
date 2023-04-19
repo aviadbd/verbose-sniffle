@@ -1,14 +1,19 @@
 require 'exifr/jpeg'
+require 'shellwords'
+require 'key_value_parser'
 
 module Jekyll
   class ExifMapTag < Liquid::Tag
     def initialize(tag_name, text, tokens)
       super
-      @images_param = text
+      @params = text
     end
 
     def render(context)
-      image_list = context.registers[:page][@images_param]
+      argv = Shellwords.split @params
+      options = KeyValueParser.new.parse(argv)
+      
+      image_list = context.registers[:page][options[:images]]
       
       "#{@images_param} -- #{image_list} -- #{context.registers[:page]['images']}"
       
