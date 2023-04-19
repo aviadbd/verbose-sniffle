@@ -10,9 +10,13 @@ module Jekyll
     def render(context)
       image_list = context.registers[:page][@images_param]
       
-      locations = get_gps_locations(image_list)
-      markers = create_markers(locations)
-      create_map(markers)
+      if image_list then
+        locations = get_gps_locations(image_list)
+        markers = create_markers(locations)
+        create_map(markers)
+      else 
+        "No Images Selected"
+      end
     end
 
     def get_gps_locations(image_list)
