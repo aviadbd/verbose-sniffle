@@ -2,7 +2,7 @@
 layout: post
 author: traveler
 images: 
-  - "assets/IMG_7655.jpeg"
+  - "assets/IMG_7655.HEIC"
   - "assets/IMG_4701.jpeg"
 center:
   - 50.1
