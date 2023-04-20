@@ -47,10 +47,10 @@ module Jekyll
       
       # print_exif_data(image, exif)
       
-      lng = exif[:gps_latitude]
-      lat = exif[:gps_longitude]
+      lat = exif[:gps_latitude]
+      lng = exif[:gps_longitude]
       
-      puts "#{[lng, lat]}"
+      puts "#{[lat, lng]}"
       
       return nil unless exif and lng and lat
       
