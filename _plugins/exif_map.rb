@@ -35,8 +35,8 @@ module Jekyll
     
     def get_gps(image)
       exif = Exiftool.new(image)
-      gps = exif&[:gpsposition]
-      gps ? [
+      gps = exif&.[:gpsposition]
+      gps ? [ # assert gps.size == 2
         gps[0].to_f,
         gps[1].to_f
       ]: nil
