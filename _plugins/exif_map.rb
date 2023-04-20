@@ -37,7 +37,12 @@ module Jekyll
       
       puts image
       puts exif
-      puts exif[:gpsposition]
+      
+      exif.each |k, v| do 
+        puts "#{k} -> #{v}"
+      end
+      
+      puts "---"
       
       return nil unless exif and exif[:gpsposition]
       
