@@ -37,6 +37,7 @@ module Jekyll
       
       puts image
       puts exif
+      puts exif[:gpsposition]
       
       return nil unless exif and exif[:gpsposition]
       
