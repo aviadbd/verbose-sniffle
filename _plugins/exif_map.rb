@@ -52,7 +52,6 @@ module Jekyll
         next unless gps
 
         locations << gps
-        end
       end
       locations
     end
