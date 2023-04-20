@@ -1,4 +1,4 @@
-require 'exifr/jpeg'
+require 'exiftool'
 require 'shellwords'
 require 'key_value_parser'
 
@@ -33,17 +33,27 @@ module Jekyll
       options
     end
     
+    def get_gps(image)
+      exif = Exiftool.new(image)
+      gps = exif&[:gpsposition]
+      gps  
+      ? [
+        gps[0].to_f,
+        gps[1].to_f
+      ]
+      : nil
+    end
+    
     def get_gps_locations(image_list)
       locations = []
       image_list.each do |image|
         next unless File.file?(image)
+        
+        gps = get_gps(image)
+        
+        next unless gps
 
-        exif = EXIFR::JPEG.new(image) 
-        # surely there's a more ruby way to write this
-        if exif.gps
-          lat = exif.gps.latitude
-          lng = exif.gps.longitude
-          locations << [lat, lng]
+        locations << gps
         end
       end
       locations
