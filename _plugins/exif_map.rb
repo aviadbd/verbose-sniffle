@@ -36,12 +36,10 @@ module Jekyll
     def get_gps(image)
       exif = Exiftool.new(image)
       gps = exif&[:gpsposition]
-      gps  
-      ? [
+      gps ? [
         gps[0].to_f,
         gps[1].to_f
-      ]
-      : nil
+      ]: nil
     end
     
     def get_gps_locations(image_list)
