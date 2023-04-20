@@ -38,7 +38,7 @@ module Jekyll
       puts image
       puts exif
       
-      exif.each |k, v| do 
+      exif.each do |k, v|  
         puts "#{k} -> #{v}"
       end
       
