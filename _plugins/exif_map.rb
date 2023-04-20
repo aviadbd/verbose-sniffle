@@ -32,23 +32,29 @@ module Jekyll
       options
     end
     
-    def get_gps(image)
-      exif = Exiftool.new(image)
+    def print_exif_data(image, exif)
+      puts "--- #{image} ---"
       
-      puts image
-      puts exif
-      
-      exif.to_hash.each do |k, v|  
+      exif.to_hash.sort.to_h.each do |k, v|  
         puts "#{k} -> #{v}"
       end
       
-      puts "---"
+      puts "--------"
+    end
+    
+    def get_gps(image)
+      exif = Exiftool.new(image)
       
-      return nil unless exif and exif[:gpsposition]
+      # print_exif_data(image, exif)
       
-      gps = exif[:gpsposition] # assert exif[:gpsposition] != nil
+      lng = exif[:gps_latitude]
+      lat = exif[:gps_longitude]
       
-      [gps[0].to_f, gps[1].to_f]
+      puts "#{[lng, lat]}"
+      
+      return nil unless exif and lng and lat
+      
+      [lat, lng]
     end
     
     def get_gps_locations(image_list)
