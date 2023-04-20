@@ -14,8 +14,7 @@ module Jekyll
       
       image_list = context.registers[:page][options[:images]]
       center = context.registers[:page][options[:center]]
-      
-      
+     
       return "No Images Selected" unless not image_list&.empty?
 
       locations = get_gps_locations(image_list)
@@ -35,6 +34,9 @@ module Jekyll
     
     def get_gps(image)
       exif = Exiftool.new(image)
+      
+      puts image
+      puts exif
       
       return nil unless exif and exif[:gpsposition]
       
